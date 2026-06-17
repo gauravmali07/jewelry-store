@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Location | Online Jewelry Store</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#f8f9fa;
+}
+
+/* Hero Section */
+
+.location-header{
+    background:linear-gradient(
+        rgba(0,0,0,.70),
+        rgba(0,0,0,.70)
+    ),
+    url('ripple.jpg');
+
+    background-size:cover;
+    background-position:center;
+
+    padding:100px 20px;
+    text-align:center;
+    color:#fff;
+}
+
+.location-header h1{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.location-header p{
+    font-size:18px;
+    max-width:800px;
+    margin:auto;
+}
+
+/* Location Card */
+
+.location-container{
+    max-width:1200px;
+    margin:50px auto;
+    padding:0 20px;
+}
+
+.location-card{
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.location-info{
+    padding:30px;
+    text-align:center;
+}
+
+.location-info h2{
+    color:#d4af37;
+    margin-bottom:15px;
+}
+
+.location-info p{
+    color:#555;
+    line-height:1.8;
+}
+
+.location-info i{
+    color:#d4af37;
+    margin-right:8px;
+}
+
+iframe{
+    width:100%;
+    height:500px;
+    border:none;
+}
+
+/* Button */
+
+.btn-location{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 30px;
+    background:#d4af37;
+    color:#fff;
+    text-decoration:none;
+    border-radius:50px;
+    transition:.3s;
+}
+
+.btn-location:hover{
+    background:#b89322;
+    color:#fff;
+}
+
+@media(max-width:768px){
+
+    .location-header h1{
+        font-size:35px;
+    }
+
+    iframe{
+        height:350px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- Header -->
+
+<div class="location-header">
+
+    <h1>
+        <i class="fas fa-map-marker-alt"></i>
+        Our Location
+    </h1>
+
+    <p>
+        Visit Online Jewelry Store and explore our premium jewelry
+        collection crafted with elegance and perfection.
+    </p>
+
+</div>
+
+<!-- Location Section -->
+
+<div class="location-container">
+
+    <div class="location-card">
+
+        <div class="location-info">
+
+            <h2>G.S. Jewellers</h2>
+
+            <p>
+
+                <i class="fas fa-store"></i>
+                Premium Jewelry Store
+
+            </p>
+
+            <p>
+
+                <i class="fas fa-map-pin"></i>
+                Visit our store location through Google Maps below.
+
+            </p>
+
+            <a href="https://maps.google.com"
+               target="_blank"
+               class="btn-location">
+
+                <i class="fas fa-directions"></i>
+                Get Directions
+
+            </a>
+
+        </div>
+
+        <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666374.89037186!2d69.22577312500005!3d26.182223799999992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3969f6f8e0266841%3A0x5fbfc97e99f040fc!2sG.S.%20Jewellers!5e0!3m2!1sen!2sin!4v1710070371036!5m2!1sen!2sin"
+        allowfullscreen=""
+        loading="lazy">
+        </iframe>
+
+    </div>
+
+</div>
+
+</body>
+</html>

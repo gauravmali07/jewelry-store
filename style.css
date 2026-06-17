@@ -1,0 +1,187 @@
+/* Project UI overrides (public + admin) */
+
+/* Ensure public header/topbar has visible buttons + readable background */
+.main-header{
+  background: rgba(0,0,0,0.55) !important;
+  border-bottom: 1px solid rgba(212,175,55,0.25) !important;
+}
+
+.navbar{
+  background: rgba(0,0,0,0.55) !important;
+}
+
+.nav-link,
+.navbar-brand,
+.main-header .nav-link{
+  color: rgba(255,255,255,0.95) !important;
+}
+
+.dropdown-menu{
+  background: rgba(20,20,26,0.98) !important;
+  border: 1px solid rgba(212,175,55,0.25) !important;
+}
+
+.dropdown-item{
+  color: rgba(255,255,255,0.92) !important;
+}
+
+/* Keep footer readable */
+.main-footer{
+  background: rgba(0,0,0,0.35) !important;
+}
+
+/* Auth and content pages should not inherit light text on dark backgrounds */
+.content-wrapper{
+  color: inherit;
+}
+
+:root{
+  --jr-gold:#D4AF37;
+  --jr-gold-dark:#B8942F;
+  --jr-silver:#C0C0C0;
+  --jr-dark:#1a1a1a;
+  --jr-bg:#0f0f14;
+  --jr-glass: rgba(255,255,255,0.08);
+  --jr-border: rgba(212,175,55,0.25);
+}
+
+/* Typography */
+body{
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Make AdminLTE “light” backgrounds feel consistent */
+.content-wrapper,
+.main-footer,
+.main-sidebar,
+.control-sidebar{
+  background-color: transparent;
+}
+
+/* Buttons */
+.btn, button[type="submit"], .btn-primary{
+  background: linear-gradient(45deg, var(--jr-gold), var(--jr-gold-dark)) !important;
+  border: 0 !important;
+  border-radius: 14px !important;
+  font-weight: 700 !important;
+  box-shadow: 0 10px 30px rgba(212,175,55,0.18);
+  letter-spacing: 0.3px;
+}
+
+.btn:hover, button[type="submit"]:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 18px 50px rgba(212,175,55,0.28);
+}
+
+/* Inputs */
+.form-control,
+input,
+textarea,
+select{
+  border-radius: 14px !important;
+  background: rgba(255,255,255,0.06) !important;
+  border: 1px solid rgba(212,175,55,0.25) !important;
+  color: rgba(255,255,255,0.95) !important;
+}
+
+.form-control::placeholder{ color: rgba(255,255,255,0.55) !important; }
+
+.form-control:focus,
+input:focus,
+textarea:focus,
+select:focus{
+  border-color: rgba(212,175,55,0.75) !important;
+  box-shadow: 0 0 0 4px rgba(212,175,55,0.18) !important;
+  background: rgba(255,255,255,0.10) !important;
+}
+
+/* Cards */
+.card{
+  border-radius: 18px !important;
+  border: 1px solid rgba(212,175,55,0.18) !important;
+  background: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)) !important;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.20);
+}
+
+/* Tables */
+.table{
+  border-radius: 16px;
+  overflow:hidden;
+  background: rgba(255,255,255,0.03);
+}
+
+.table th{
+  background: linear-gradient(90deg, var(--jr-gold), #e0c070) !important;
+  color: #0b0b10 !important;
+}
+
+/* Modals */
+.modal-content{
+  border-radius: 22px !important;
+  border: 1px solid rgba(212,175,55,0.25) !important;
+}
+
+/* Links */
+a,
+.nav-link,
+.dropdown-item{
+  color: rgba(212,175,55,0.98) !important;
+}
+
+a:hover,
+.nav-link:hover,
+.dropdown-item:hover{
+  color: var(--jr-gold) !important;
+}
+
+/* Force readable text across visible UI (public + admin) */
+html, body,
+.main-header,
+.navbar,
+.main-footer,
+.dropdown-menu,
+.card,
+.content-wrapper,
+.table,
+.table td,
+.table th,
+.text-muted,
+.small,
+span,
+label{
+  color: rgba(255,255,255,0.92) !important;
+}
+
+/* Keep table headers gold readable */
+.table th{
+  color: rgba(255,255,255,0.98) !important;
+}
+
+
+/* Toast text */
+.toast-body{
+  color: #111 !important;
+}
+
+/* Auth pages (login/register) – keep markup flexible, restyle if those old classes exist */
+body.hold-transition.login-page,
+body.hold-transition.register-page,
+body.hold-transition.admin-login{
+  background: radial-gradient(1000px 500px at 15% 10%, rgba(212,175,55,0.18) 0%, rgba(212,175,55,0.02) 40%, transparent 65%),
+              radial-gradient(900px 400px at 85% 15%, rgba(160,120,0,0.12) 0%, rgba(160,120,0,0.02) 45%, transparent 70%),
+              linear-gradient(135deg, #0e0e12 0%, #141418 35%, #0e0e12 100%) !important;
+  min-height: 100vh;
+}
+
+/* Preloader hook used in header.php */
+#preloader2{
+  background: #0f0f14;
+}
+
+/* Responsive tweak */
+@media (max-width: 576px){
+  .card{ border-radius: 14px !important; }
+}
+
+
+

@@ -1,0 +1,377 @@
+/* Jewelry Webstore - Luxurious Professional Theme */
+/* Version 2.0 - Unified CSS for Public & Admin */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* CSS Variables */
+:root {
+  --gold-primary: #D4AF37;
+  --gold-dark: #B8942F;
+  --silver: #C0C0C0;
+  --silver-dark: #A8A8A8;
+  --dark-bg: #1a1a1a;
+  --dark-secondary: #2d2d2d;
+  --light-text: #f8f9fa;
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-blur: blur(10px);
+  --shadow-gem: 0 10px 30px rgba(212, 175, 55, 0.3);
+  --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Global Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #fdf8f0 0%, #f8f4ed 50%, #fffaf5 100%);
+  color: #2c2c2c;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+:root {
+  --gold-primary: #D4AF37;
+  --gold-dark: #B8942F;
+  --silver: #C0C0C0;
+  --accent-blue: #4A90E2;
+  --shadow-gold: 0 10px 30px rgba(212, 175, 55, 0.2);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: var(--light-text);
+  text-shadow: 0 2px 10px rgba(212, 175, 55, 0.5);
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/hero-bg.jpg') center/cover no-repeat fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, var(--gold-primary), var(--silver));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { filter: drop-shadow(0 0 20px var(--gold-primary)); }
+  to { filter: drop-shadow(0 0 30px var(--gold-primary)); }
+}
+
+/* Navbar - Glassmorphism */
+.main-header, .navbar {
+  background: var(--glass-bg) !important;
+  backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  box-shadow: var(--shadow-soft);
+}
+
+.navbar-brand, .nav-link {
+  color: var(--light-text) !important;
+  transition: var(--transition);
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--gold-primary) !important;
+  transform: translateY(-2px);
+  text-shadow: 0 0 15px var(--gold-primary);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 50%;
+  background: var(--gold-primary);
+  transition: var(--transition);
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 80%;
+}
+
+/* Cards - Gem-like 3D */
+.card {
+  background: #ffffff;
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: var(--transition);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  position: relative;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+}
+
+.card:hover {
+  transform: translateY(-15px) rotateX(5deg);
+  box-shadow: var(--shadow-gem), 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* Forms */
+.form-control, input, textarea, select {
+  background: rgba(255,255,255,0.1) !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  color: var(--light-text) !important;
+  border-radius: 12px;
+  padding: 15px;
+  transition: var(--transition);
+}
+
+.form-control:focus, input:focus, textarea:focus {
+  background: rgba(212, 175, 55, 0.1) !important;
+  border-color: var(--gold-primary) !important;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4) !important;
+  color: var(--light-text) !important;
+}
+
+.form-label {
+  color: var(--silver);
+  font-weight: 500;
+}
+
+/* Buttons - Gold Gem */
+.btn, button[type="submit"] {
+  background: linear-gradient(45deg, var(--gold-primary), var(--gold-dark)) !important;
+  border: none !important;
+  border-radius: 25px !important;
+  padding: 12px 30px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px;
+  transition: var(--transition);
+  box-shadow: var(--shadow-gem);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:hover, button[type="submit"]:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.5);
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+/* Sidebar - Admin Enhancement */
+.main-sidebar {
+  background: linear-gradient(180deg, var(--dark-bg), var(--dark-secondary)) !important;
+  border-right: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.nav-link {
+  border-radius: 10px;
+  margin: 5px 10px;
+}
+
+.nav-link:hover {
+  background: rgba(212, 175, 55, 0.2) !important;
+  transform: scale(1.02);
+}
+
+/* Tables & DataTables */
+.table {
+  background: rgba(255,255,255,0.05);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.table th {
+  background: linear-gradient(90deg, var(--gold-primary), var(--silver));
+  color: var(--dark-bg);
+  font-weight: 600;
+}
+
+/* Modals */
+.modal-content {
+  background: linear-gradient(145deg, rgba(26,26,26,0.95), rgba(42,42,42,0.95));
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 20px;
+  backdrop-filter: var(--glass-blur);
+}
+
+/* Footer */
+.main-footer {
+  background: linear-gradient(180deg, var(--dark-secondary), var(--dark-bg)) !important;
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* Sparkle Effect */
+.sparkle {
+  position: relative;
+}
+
+.sparkle::before {
+  content: '✦';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  color: var(--gold-primary);
+  font-size: 1.2rem;
+  animation: sparkle 3s infinite;
+  z-index: 1;
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1) rotate(180deg); }
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 4rem 2rem;
+}
+
+.price {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, var(--gold-primary), #e67e22);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2.5rem; }
+  .navbar-nav { text-align: center; }
+  .product-grid { grid-template-columns: 1fr; padding: 2rem 1rem; }
+}
+
+@media (max-width: 480px) {
+  .card { margin-bottom: 1rem; }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--gold-primary), var(--silver));
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-primary);
+}
+
+/* Override AdminLTE */
+.content-wrapper {
+  background: transparent !important;
+  min-height: calc(100vh - 140px);
+}
+
+/* Loading Animation */
+#preloader2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--dark-bg);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preloader-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid var(--glass-bg);
+  border-top: 3px solid var(--gold-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Merge from existing css.css & style.css - Enhanced */
+.feedback-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 40px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border-radius: 25px;
+  box-shadow: var(--shadow-gem);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.rating .star {
+  color: var(--silver);
+  transition: var(--transition);
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.rating .star:hover,
+.rating .star.selected {
+  color: var(--gold-primary);
+  text-shadow: 0 0 10px var(--gold-primary);
+}
+
+/* Product Cards Enhanced */
+.card-img-top {
+  height: 250px;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.1);
+}
+
+/* End of Theme */
+
